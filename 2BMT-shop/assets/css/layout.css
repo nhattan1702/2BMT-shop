@@ -1,0 +1,250 @@
+/* header */
+.header{
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar-list-top,
+#navbar-list-bottom{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.logo{
+    padding: 0;
+    margin-left: 90px;
+    margin-right: 10px;
+}
+
+.logo img{
+    height: 50px;
+    width: auto;
+    padding: 0;    
+}
+
+.navbar-item1 .home, .brand{
+    text-decoration: none;
+    color: #999999;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 14px;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: 0.4s ease;
+}
+
+#navbar-list-top .active {
+	color: #ffffff;
+}
+#navbar-list-top .active::after {
+	transform: scale(1, 1);
+}
+
+.home{
+    position: relative;
+}
+
+.brand{
+    position: relative;
+}
+
+.brand::after{
+    content: '';
+    display: block;
+    background-color: #ffffff;
+    height: 2px;
+    width: 100%;
+    margin-left: 14px;
+    position: absolute;
+    top: 120%;
+    transform: scale(0, 1);
+    transition: 0.5s ease-out;
+}
+
+.brand:hover::after{
+	transform: scale(1, 1);	
+}
+
+.brand:hover {
+	color: #ffffff;
+}
+#navbar-list-bottom .navbar_loading {
+	display: flex;
+	align-items: center;
+}
+#navbar-list-bottom .navbar_info {
+	padding: 10px 6px;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #ffffff;
+	font-size: 13pt;
+	font-weight: 400;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#navbar-list-bottom .navbar_search ,
+#navbar-list-bottom .navbar_shopcart {
+	font-size: 15pt;
+	color: #ffffff;
+	cursor: pointer;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#navbar-list-bottom .navbar_shopcart,
+#navbar-list-bottom .navbar_shopcart_content {
+	position: relative;
+}
+
+#navbar-list-bottom .navbar_shopcart_content .number_cart {
+	position: absolute;
+	top: -10px;
+	right: -14px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: rgb(253, 216, 53);
+	color: #000;
+	font-size: 10pt;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar_shopcart .notify_cart {
+	position: absolute;
+	top: 30px;
+	right: -13px;
+	width: 270px;
+	padding: 16px;
+	display: none;
+	align-items: center;
+	background-color: #ffffff;
+	color: #000;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 7px;
+	outline: none;
+}
+
+.navbar_shopcart .notify_cart::after {
+	content: '';
+ 	position: absolute;
+	bottom: 100%;
+	right: 15px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent transparent rgb(255, 255, 255);
+
+}
+
+.navbar_shopcart .notify_cart span {
+	font-size: 10pt;
+}
+
+.navbar_shopcart .notify_cart .notify_check {
+	color: rgb(76, 175, 80);
+	margin-right: 5px;
+}
+
+.navbar_shopcart .notify_cart .notify_exit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 5px;
+	color: rgb(155, 155, 155);
+	font-size: 10pt;
+	cursor: pointer;
+	transition: 0.6s;
+}
+
+.navbar_shopcart .notify_cart .notify_exit:hover {
+	transform: scale(1.2);
+}
+
+#footer {
+    width: 100%; 
+    background: #000;
+    color: #999;
+    font-size: 13px;
+    border-top: 1px solid #333;
+    padding-top: 3%;
+    overflow: hidden;
+    line-height: 1.6;
+    font: 300 14px 'Montserrat';
+    padding-left: 3%;
+}
+
+img:hover {
+    cursor: pointer;
+}
+.row-listRow > div {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    list-style: none;
+    margin-bottom: 30px;
+}
+.row-listRow li img {
+   width: 50px;
+   margin-top: 15px;
+}
+/* end contact */
+
+
+/* footer */
+#footer .pay {
+    float: left;
+    width: 33.33333%;
+    
+}
+#footer .ketnoi {
+    width: 33.33333%;
+    float: left;
+}
+#footer .tintuc {
+    width: 33.33333%;
+    float: left;
+}
+#footer .ul li {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+#footer .tt {
+    margin-top: 15px;
+}
+li.tt {
+    list-style: none;
+}
+li.img-pay {
+    list-style: none;
+    margin-top: 15px;
+}
+li.img-ketnoi {
+    list-style: none;
+    margin-top: 15px; 
+}
+.from-group {
+    margin-top: 15px;
+}
+.form-control {
+    height: 45px;
+    width: 70%;
+    padding: 12px;
+}
+/* end footer */
+

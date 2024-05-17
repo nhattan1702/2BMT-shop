@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+	<link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font-icon/themify-icons/themify-icons.css">
+	<link rel="stylesheet" href="./assets/css/grid.css">
+    <title>2BMT MOTOR</title>
+</head>
+	<body>
+        <header class="header">
+            <nav class="navbar">
+                <ul id="navbar-list-top">
+					<li class="navbar-item1">
+						<a href="./index.html" class="logo">
+							<img src="./assets/img/header/navLogo.PNG">
+						</a>
+					</li>
+					<li class="navbar-item1">
+						<a class="brand active">trang chủ</a>
+					</li>
+					<li class="navbar-item1">
+						<a class="brand">kawasaki</a>
+					</li>
+					<li class="navbar-item1">
+						<a class="brand">honda</a>
+					</li>
+					<li class="navbar-item1">
+						<a class="brand">yamaha</a>
+					</li>
+					<li class="navbar-item1">
+						<a class="brand">suzuki</a>
+					</li>
+                </ul>
+
+                <ul id="navbar-list-bottom">
+					<ul class="navbar_loading">
+					</ul>
+					<div class="navbar_shopcart"> 
+						<div class="navbar_shopcart_content">
+							GIỎ HÀNG
+							<i class="fas fa-shopping-cart"></i>
+							<div class="number_cart">
+								0
+							</div>
+						</div>
+						<div class="notify_cart" tabindex="0">
+							<i class="fas fa-check-circle notify_check"></i>
+							<span>Thêm vào giỏ hàng thành công!</span>	
+							<i class="fas fa-times notify_exit" onClick="hideNotifyCart()"></i>
+						</div>
+					</div>
+					<div class="navbar_search"><i class="fa fa-search" aria-hidden="true" onClick="showSearch()"></i></div>
+                </ul>
+            </nav>
+        </header>
+        
+
+        
+        <!------------------------------------------------- MODAL-------------------------------------------------- -->
+        <div id="user" class="modal">
+        
+        <!--------------------------------------------- LOGIN ----------------------------------------------------- -->
+            <div id="login" style="display: none">
+                <form id="loginform">
+                    <button type="button" class="close" onClick="closeForm()">+</button>
+                    <h2>ĐĂNG NHẬP</h2>
+                    <div class="logininfo">
+                        <div class="col">
+                            <label for="usernameLogin">Tên đăng nhập:</label>
+                            <input type="text" id="usernameLogin">
+                            <div id="usernameerror">Bạn chưa nhập tên đăng nhập</div>
+                            <label for="passwordLogin">Mật khẩu:</label>
+                            <input type="password" id="passwordLogin">
+                            <div id="passwordloginerror">Bạn chưa nhập mật khẩu</div>
+                        </div>
+                    </div>
+                    <button type="submit" id="btnlogin">Login</button>
+                    <p>Bạn chưa có tài khoản? <a href="#" onClick="hienThiFormUser('signup')">Đăng ký</a></p>
+                    <div class="auth-social">
+                        <a href="https://facebook.com" class="social-btn btn-facebook">
+                            <i class="social-icon fab fa-facebook"></i>
+                            <span class="social-title facebook-title">
+                            Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="https://google.com" class="social-btn btn-google">
+                            <i class="social-icon fab fa-google"></i>
+                            <span class="social-title google-title">
+                            Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        <!--------------------------------------- SIGN UP ------------------------------------------------------------>
+            <div id="signup" style="display:none">
+                <form id="signupform">
+                    <button type="button" class="close" onClick="closeForm()">+</button>
+                    <h2>ĐĂNG KÝ</h2>
+                    <div class="signupinfo">
+                        <div class="col">
+                            <label for="fullname">Họ và tên: </label>
+                            <input type="text" id="fullname">
+                            <div id="fullnameerror">Bạn chưa nhập họ tên</div>
+                            <label for="address">Địa chỉ: </label>
+                            <input type="text" id="address">
+                            <div id="addresserror">Bạn chưa địa chỉ</div>
+                            <label for="phone">Số điện thoại: </label>
+                            <input type="text" id="phone">
+                            <div id="phoneerror">Bạn chưa nhập số điện thoại</div>
+                        </div>
+                        <div class="col">
+                            <label for="usernameSignUp">Tên đăng nhập: </label>
+                            <input type="text" id="usernameSignUp">
+                            <div id="usererror">Bạn chưa nhập tên đăng nhập</div>
+                            <label for="passwordSignUp">Mật khẩu: </label>
+                            <input type="password" id="passwordSignUp">
+                            <div id="passworderror">Bạn chưa nhập mật khẩu</div>
+                            <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                            <input type="password" id="passwordSignUp2">
+                            <div id="password2error">Mật khẩu nhập lại phải trùng với mật khẩu</div>
+                        </div>
+                        <!-- policy -->
+                        <div class="auth-more">
+                            <p class="auth-policy-text">
+                                Bằng việc đăng ký tài khoản, bạn đã đồng ý với 2BMT MOTOR về
+                                <a class="auth-policy-link" href="">Điều khoản dịch vụ</a> và
+                                <a href="" class="auth-policy-link">Chính sách bảo mật</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- auth control -->
+                    <button type="submit" id="btnsignup">Đăng ký</button>
+                    <p>Trở về trang <a href="#" onClick="hienThiFormUser('login')">Đăng nhập</a></p>
+                    <!-- social -->
+                    <div class="auth-social">
+                        <a href="https://facebook.com" class=" social-btn btn-facebook">
+                            <i class="social-icon fab fa-facebook"></i>
+                            <span class="social-title facebook-title">
+                            Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="https://google.com" class=" social-btn btn-google">
+                            <i class="social-icon fab fa-google"></i>
+                            <span class="social-title google-title">
+                            Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+<!----------------------SEARCH SECTION BEGIN ---------------------------->
+        <div id="searchsection">
+            <div class="container">
+                <div class="close" onClick="closeSearch()">+</div>
+                <div class="searchbox">
+                    <input type="text" placeholder="Tìm kiếm" id="search" onKeyUp="search()"><button onClick="showExtend()"><img src="./assets/img/icon/arrow.svg"></button>
+                </div>
+                <div id="searchextend" class="">
+                    <div>
+                        <select id="brandsearch" onchange="search()">
+                            <option value="all" selected>TẤT CẢ</option>
+                            <option value="honda">HONDA</option>
+                            <option value="yamaha">YAMAHA</option>
+                            <option value="suzuki">SUZUKI</option>
+                            <option value="kawasaki">KAWASAKI</option>
+                        </select>
+                    </div>
+                    <div> <input type="text" id="priceform" onchange="search()" placeholder="Giá từ"> &mdash; <input type="text" id="priceto" onchange="search()" placeholder="Đến"></div>
+                </div>
+				<div class="grid wide">
+	                <div class="row" id="searchresult"></div>
+				</div>
+            </div>
+        </div>
+
+    <!------------------------SEARCH SECTION END --------------------------->
+
+
+
+    
+        <!-- ---------------------------SLIDER-------------------------- -->
+<div id="slider">
+            <div class="content">
+                <div class="item">
+                    <a class="slider-link">
+                        <div class="slider-img kawasaki">
+                            <div class="slider-content">
+                                <h3 class="slider-header">KAWASAKI</h3>
+                                <p class="slider-description">Xem thêm</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="item">
+                    <a class="slider-link">
+                        <div class="slider-img honda">
+                            <div class="slider-content">
+                                <h3 class="slider-header">HONDA</h3>
+                                <p class="slider-description">Xem thêm</p>
+                            </div>
+                        </div>
+                    </a>   
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="item">
+                    <a class="slider-link">
+
+                        <div class="slider-img yamaha">
+                            <div class="slider-content">
+                                <h3 class="slider-header">
+                                    YAMAHA
+                                </h3>
+                                <p class="slider-description">
+                                    Xem thêm
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="slider-link">
+                        <div class="slider-img suzuki">
+                            <div class="slider-content">
+                                <h3 class="slider-header">
+                                    SUZUKI
+                                </h3>
+                                <p class="slider-description">
+                                    Xem thêm
+                                </p>
+                            </div> 
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+		<!-- -------------------------introduction------------------- -->
+		<div id="introduction">
+			<div class="introduction_header">
+				<h2>Giới thiệu</h2>
+			</div>
+			<div class="introduction_content">
+				<div class="image">
+					<img src="./assets/img/introduction/image_introduction.png">
+				</div>
+				<div class="text">
+					<span>2BMT-Shop</span> là một trang web chuyên mua bán các dòng xe mô tô thể thao phân khối lớn của một số hãng nổi tiếng như HonDa, Yamaha, Suzuki, Kawasaki. Shop có nhiều sự lựa chọn cho người chơi xe thể thao, mẫu mã đa dạng, giá cả hợp lý. Với rất nhiều dịch vụ đi cùng quà tặng và các khuyến mãi hấp dẫn, 2BMT-Shop rất vui lòng được hỗ trợ khách hàng trong việc lựa chọn cho mình một chiếc motor phù hợp nhất với bản thân. Cám ơn quý khách đã sử dụng dịch vụ. Thân!
+				</div>
+			</div>
+		</div>
+
+
+        <!-- --------------------------CONTENT----------------------- -->
+		<div id="product_details">
+			<div class="info">
+				<div class="info_header">
+					<div class="info_button_exit">
+						<i class="fa fa-times" aria-hidden="true" onClick="closeProductDetails()"></i>
+					</div>
+				</div>
+				<div class="info_body">
+					<div class="info_image ">				
+						<img src="./assets/img/product/yamaha/Yamaha R7.jpg">
+					</div>
+					<div class="info_text">
+						<h2 class="info_name">Suzuki GSX-100</h2>
+						<span class="info_price">Gia: 160.000.000VND</span>
+						<span class="info_producer">Nha san xuat: Yamaha</span>
+						<div class="quantity">
+							<button class="quantity_down">-</button>
+							<input type="text" class="quantity_input" readonly value="1">
+							<button class="quantity_up">+</button>
+						</div>
+						<button class="add_item">
+							Thêm vào giỏ hàng
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div id="main">
+            <div class="container" id="maincontent">
+                <div class="ttt-1 text-center">sản phẩm</div>
+				<div class="grid wide">
+					<div class="row" id="product">
+					</div>
+				</div>
+                <div id="page"></div>
+            </div>
+        </div>  
+      
+        <div id="contact">
+            <div class="item">
+                <p><i class ="ti-credit-card"></i></p>
+                <span class="text">THANH TOÁN DỄ DÀNG VÀ BẢO MẬT</span>
+            </div>
+            <div class="item">
+                <p><i class ="ti-truck"></i></p>
+                <span class="text">GIAO HÀNG ĐẢM BẢO TOÀN QUỐC</span>
+            </div>
+            <div class="item">
+                <p><i class ="ti-headphone-alt"></i></p>
+                <span class="text">HOT LINE 09095678
+                    <br> 10:00 - 19:00
+                </span>
+            </div>
+            <div class="item">
+                <p><i class ="ti-briefcase"></i></p>
+                <span class="text">CAM KẾT SẢN PHẨM CHÍNH HÃNG</span>
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <div class="wrap-main">
+                <div class="row-listRow">
+                    <div class="pay">
+                        <ul>
+                            <li class="tt">PHƯƠNG THỨC THANH TOÁN</li>
+                            <li class="img-pay">
+                            <img src="./assets/img/contact/ic_visa.jpg" alt="visa">
+                            <img src="./assets/img/contact/ic_mscard.jpg" alt="mscard">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ketnoi">
+                        <ul>
+                            <li class="tt">KẾT NỐI VỚI CHÚNG TÔI</li>
+                            <li class="img-ketnoi">
+                                <img src="./assets/img/contact/ic_fb2.jpg" alt="facebook" >
+                                <img src="./assets/img/contact/ic_insta2.jpg" alt="insta">
+                                <img src="./assets/img/contact/ic_youtube1.jpg" alt="youtube" >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tintuc">
+                        <li class="tt">NHẬN BẢN TIN</li>
+                        <li>
+                            <div class="from-group">
+                                <input type="email" placeholder="Vui lòng nhập email của bạn" class="form-control">
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="customalert"></div>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
